@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticación de Celulares</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Registro y Autenticación de Celulares</h1>
+        <h2>Registrar Celular</h2>
+        <input type="text" id="marcaCell" placeholder="Marca">
+        <input type="text" id="modeloCell" placeholder="Modelo">
+        <input type="text" id="imeiCell" placeholder="IMEI">
+        <input type="text" id="proveedorCell" placeholder="Proveedor">
+        <button onclick="registerCell()">Registrar Celular</button>
+        <h2>Lista de Registros</h2>
+        <ul id="ListaCell"></ul>
+        <!-- Formulario de Edición -->
+        <div id="editarCelular" style="display: none;">
+            <h2>Editar Celular</h2>
+            <input type="hidden" id="indexEdit"> <!-- Campo oculto para guardar el índice del bloque -->
+            <input type="text" id="marcaEdit" placeholder="Marca">
+            <input type="text" id="modeloEdit" placeholder="Modelo">
+            <input type="text" id="imeiEdit" placeholder="IMEI">
+            <input type="text" id="comprador" placeholder="Comprador (dejar vacío si no está vendido)">
+            <input type="text" id="cedula" placeholder="Cédula del comprador">
+            <input type="checkbox" id="robadoPerdido"> Dispositivo robado o perdido
+            <button onclick="actualizarCelular()">Actualizar Celular</button>
+            <button onclick="cancelarEdicion()">Cancelar</button>
+        </div>
+        <h2>Buscar por IMEI</h2>
+        <input type="text" id="imeiSearch" placeholder="Ingrese el IMEI">
+        <button onclick="buscarPorIMEI()">Buscar</button>
+        <div id="resultadoBusqueda"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
